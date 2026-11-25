@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Tiendita Bebelín{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <a href="/" class="logo">Tiendita <span>Bebelín</span></a>
+        <p>Los mejores precios de tu barrio</p>
+    </header>
+
+    <main class="contenedor">
+
+        {% with mensajes = get_flashed_messages() %} {% if mensajes %} {% for mensaje in mensajes %}
+        <p class="mensaje">{{ mensaje }}</p>
+        {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock %}
+
+    </main>
+
+    <footer>
+        <p>Tiendita Bebelín © 2026 | Los precios de tu barrio, más cerca.</p>
+    </footer>
+
+    {% block scripts %}{% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+ {% extends "base.html" %} {% block title %}Tiendita Bebelín | Compara precios{% endblock %} {% block content %}
+
+<section class="bienvenida">
+    <h1>Encuentra los mejores precios cerca de ti</h1>
+    <p>Compara productos y descubre los negocios de tu barrio.</p>
+</section>
+
+<section class="buscador">
+    <input type="text" id="buscarProducto" placeholder="¿Qué producto estás buscando? Ej: leche, pan, arroz...">
+
+    <button id="btnBuscar">Buscar</button>
+</section>
+
+<section class="categorias">
+    <button>Todos</button>
+    <button>Alimentos</button>
+    <button>Bebidas</button>
+    <button>Limpieza</button>
+    <button>Hogar</button>
+    <button>Aseo personal</button>
+</section>
+
+<div class="contenido-principal">
+
+    <section class="contenedor-mapa">
+        <h2>Negocios cerca de ti</h2>
+        <div id="mapa"></div>
+    </section>
+
+    <section class="resultados">
+        <h2>Precios encontrados</h2>
+
+        <div id="listaNegocios">
+            <p>Busca un producto para ver los precios disponibles.</p>
+        </div>
+
+        <a href="{{ url_for('negocio') }}" class="boton-registrar">
+            Registrar un precio
+        </a>
+    </section>
+
+</div>
+
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='js/mapa.js') }}"></script>
+{% endblock %}

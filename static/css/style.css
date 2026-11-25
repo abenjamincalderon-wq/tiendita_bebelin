@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f7f4;
+    color: #26372d;
+}
+
+.encabezado {
+    background: #ffffff;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+    color: #218653;
+    font-size: 27px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #75b98c;
+}
+
+.encabezado p {
+    color: #718078;
+    font-size: 14px;
+}
+
+.contenedor {
+    max-width: 1450px;
+    margin: auto;
+    padding: 30px 4%;
+}
+
+.bienvenida {
+    margin-bottom: 25px;
+}
+
+.bienvenida h1 {
+    font-size: 30px;
+    color: #205f3d;
+    margin-bottom: 8px;
+}
+
+.bienvenida p {
+    color: #718078;
+}
+
+.buscador {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.buscador input {
+    flex: 1;
+    padding: 16px;
+    border: 1px solid #dce8df;
+    border-radius: 12px;
+    font-size: 15px;
+    outline: none;
+}
+
+.buscador input:focus {
+    border-color: #36a66a;
+}
+
+.buscador button {
+    background: #26965b;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0 28px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.categorias {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.categorias button {
+    background: white;
+    border: 1px solid #dce8df;
+    color: #39744e;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.categorias button:hover {
+    background: #e0f3e6;
+}
+
+.contenido-principal {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.contenedor-mapa,
+.resultados {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.contenedor-mapa h2,
+.resultados h2 {
+    color: #285e3d;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+#mapa {
+    width: 100%;
+    height: 530px;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #718078;
+    font-size: 13px;
+}
+
+@media (max-width: 850px) {
+    .contenido-principal {
+        grid-template-columns: 1fr;
+    }
+    #mapa {
+        height: 400px;
+    }
+    .encabezado {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .bienvenida h1 {
+        font-size: 23px;
+    }
+    .buscador {
+        flex-direction: column;
+    }
+    .buscador button {
+        padding: 14px;
+    }
+    #mapa {
+        height: 350px;
+    }
+}
